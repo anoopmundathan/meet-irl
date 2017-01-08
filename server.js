@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    // morgan = require('morgan'),
+    morgan = require('morgan'),
     path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// app.use(morgan('dev'));
+app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/app'));
 
